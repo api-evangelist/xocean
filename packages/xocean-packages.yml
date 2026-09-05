@@ -1,0 +1,29 @@
+generated: '2026-09-04'
+method: searched
+source: npm, PyPI, RubyGems, crates.io and the GitHub API, searched 2026-09-04
+note: >-
+  XOCEAN publishes no client libraries, SDKs or packages of any kind. There is no XOCEAN GitHub
+  organization (api.github.com/orgs/xocean returns 404) and no first-party package on any public
+  registry. The GitHub user/org accounts matching the string "xocean" belong to unrelated parties
+  (xoceanmodel is a Chinese ocean-model project, xOcean-Finance is a cryptocurrency project) and
+  are recorded here only so a future run does not mistake them for XOCEAN. No SDKs pointer is
+  emitted, because there is no API for a client library to talk to.
+packages: []
+repositories: []
+x-evidence:
+  fetched: '2026-09-04'
+  urls:
+  - url: https://api.github.com/orgs/xocean
+    status: 404
+  - url: https://registry.npmjs.org/-/v1/search?text=xocean
+    status: 200
+    result: 0 results
+  - url: https://pypi.org/pypi/xocean/json
+    status: 404
+  - url: https://rubygems.org/api/v1/gems/xocean.json
+    status: 404
+  - url: https://crates.io/api/v1/crates/xocean
+    status: 404
+x-not-xocean:
+- https://github.com/xoceanmodel
+- https://github.com/xOcean-Finance

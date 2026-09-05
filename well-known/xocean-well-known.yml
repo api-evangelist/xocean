@@ -1,0 +1,100 @@
+generated: '2026-09-04'
+method: probed
+source: live HTTPS probes of xocean.com and www.xocean.com
+note: >-
+  Every named /.well-known/ path returned 404 on both hosts XOCEAN operates, and the 404 body is
+  the WordPress theme's HTML error page rather than a document. XOCEAN publishes no discovery
+  documents, so NO WellKnown or SecurityTxt pointer is emitted in apis.yml — this file records a
+  measured absence, not a served surface. Certificate-transparency enumeration of *.xocean.com
+  returned only careers., cyberdeck., ignition., vnc. and www., none of which resolve in public
+  DNS, so there is no additional host to probe.
+hosts:
+- host: xocean.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: www.xocean.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+x-contract-discovery:
+  note: >-
+    STEP 0b contract discovery, run 2026-09-04. No OpenAPI, Swagger, GraphQL, AsyncAPI, MCP,
+    A2A agent card, gRPC or WSDL surface exists on any host XOCEAN controls. The one
+    machine-readable surface found is the stock WordPress REST API at https://xocean.com/wp-json/
+    (HTTP 200, 407 routes across 23 namespaces — wp/v2, elementor/v1, wp-smush/v1, complianz/v1,
+    google-site-kit/v1 and similar CMS plugin namespaces). It is the default REST layer of the
+    marketing site's CMS, not a product XOCEAN publishes, documents or supports, so it is recorded
+    here as a finding and deliberately NOT registered as an API entry or wired to a contract
+    pointer — doing so would credit XOCEAN with an API it never shipped.
+  probes:
+  - url: https://xocean.com/openapi.json
+    status: 404
+  - url: https://xocean.com/swagger.json
+    status: 404
+  - url: https://xocean.com/api-docs
+    status: 404
+  - url: https://xocean.com/llms.txt
+    status: 404
+  - url: https://xocean.com/wp-json/
+    status: 200
+    result: WordPress REST API root, CMS default, not a product API
+  - url: https://www.xocean.com/openapi.json
+    status: 404
+  - url: https://api.xocean.com/
+    status: 0
+    result: NXDOMAIN
+  - url: https://docs.xocean.com/
+    status: 0
+    result: NXDOMAIN
+  - url: https://developer.xocean.com/
+    status: 0
+    result: NXDOMAIN
+  - url: https://api.github.com/orgs/xocean
+    status: 404
+    result: no GitHub organization
+  ogc_probe:
+    attempted: false
+    reason: >-
+      XOCEAN is a hydrographic survey operator, so an OGC surface was considered, but no baseURL,
+      docs link or page on xocean.com names WMS, WFS, WCS, WMTS, CSW or "OGC API", and no
+      geo/gis/maps/data subdomain exists in certificate transparency or DNS. Per the pipeline's
+      evidence-only rule, no blind OGC path patterns were probed.

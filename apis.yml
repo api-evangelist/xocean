@@ -1,17 +1,57 @@
 aid: xocean
 name: XOCEAN
-description: 'XOCEAN is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'XOCEAN is an Irish ocean-data company, founded in 2017 and headquartered at the
+  Rathcor Technical Centre in Co. Louth, Ireland, with offices in the UK, US, Canada, Norway and
+  Australia and over 240 staff. It collects turnkey marine data using a fleet of low-carbon
+  Uncrewed Surface Vessels (USVs) piloted over satellite from onshore operations centres, carrying
+  multibeam echosounder, sub-bottom profiler, side-scan sonar, magnetometer and USBL payloads for
+  seabed mapping, geophysical survey and environmental monitoring. Its customers are offshore wind
+  developers, subsea cable operators, national hydrographic offices, oil and gas operators and
+  carbon capture and storage projects, and its proprietary CyberDeck cloud environment monitors and
+  controls the fleet in real time. XOCEAN sells survey data as a service — project deliverables,
+  not a programmable product — and publishes no public API, developer portal, SDK or
+  machine-readable contract of any kind.'
+image: https://xocean.com/wp-content/uploads/2023/01/icon.png
 url: https://raw.githubusercontent.com/api-evangelist/xocean/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
-specificationVersion: '0.20'
+x-tier: profile
+x-tier-reason: no-api-surface
+specificationVersion: '0.23'
 created: '2026-09-04'
 modified: '2026-09-04'
 tags:
 - Company
+- Ocean Data
+- Marine Survey
+- Hydrography
+- Uncrewed Surface Vessels
+- Marine Robotics
+- Offshore Wind
+- Seabed Mapping
+- Bathymetry
+- Geospatial
+- Environmental Monitoring
+- Subsea Cables
+- Carbon Capture and Storage
+- Blue Economy
+- Ireland
+tags_raw:
+- Company
+- Ocean Data
+- Marine Survey
+- Hydrography
+- Uncrewed Surface Vessels
+- Marine Robotics
+- Offshore Wind
+- Seabed Mapping
+- Bathymetry
+- Geospatial
+- Environmental Monitoring
+- Subsea Cables
+- Carbon Capture and Storage
+- Blue Economy
+- Ireland
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +60,73 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://xocean.com/
+- type: About
+  url: https://xocean.com/company/
+- type: Features
+  url: https://xocean.com/technology/
+- type: Services
+  url: https://xocean.com/data-as-a-service/
+- type: Solutions
+  url: https://xocean.com/industries/
+- type: Careers
+  url: https://xocean.com/careers/
+- type: Contact
+  url: https://xocean.com/contact/
+- type: Support
+  url: https://xocean.com/contact/
+- type: ContactUs
+  url: https://xocean.com/imprint/
+- type: BlogFeed
+  url: https://xocean.com/feed/
+- type: TermsOfService
+  url: https://xocean.com/terms-and-conditions/
+- type: TermsOfUse
+  url: https://xocean.com/disclaimer/
+- type: PrivacyPolicy
+  url: https://xocean.com/privacy-statement-eu-2/
+- type: Privacy
+  url: https://xocean.com/cookie-policy-eu-2/
+- type: CodeOfConduct
+  url: https://xocean.com/supplier-code-of-conduct/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/xocean/
+- type: Twitter
+  url: https://twitter.com/xoceansocial
+- type: Instagram
+  url: https://www.instagram.com/xoceansocial/
+- type: DomainSecurity
+  url: security/xocean-domain-security.yml
+- type: Packages
+  url: packages/xocean-packages.yml
+- type: LLMsTxt
+  url: llms/xocean-llms.txt
+x-enrichment:
+  date: '2026-09-04'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    XOCEAN sells ocean survey data as contracted project deliverables rather than as a
+    programmable product — xocean.com is a 22-page WordPress marketing site with no /developers,
+    /api or /docs section, api./docs./developer.xocean.com do not exist in DNS, there is no xocean
+    GitHub organization, and the only machine-readable surface on the domain is the CMS's own
+    stock /wp-json/ REST root; the CyberDeck cloud platform named on the technology page is the
+    internal console XOCEAN's own pilots use to fly the USVs, not a customer-facing API.
+  evidence:
+  - url: https://xocean.com/openapi.json
+    status: 404
+  - url: https://xocean.com/llms.txt
+    status: 404
+  - url: https://xocean.com/.well-known/agent-card.json
+    status: 404
+  - url: https://xocean.com/.well-known/api-catalog
+    status: 404
+  - url: https://api.github.com/orgs/xocean
+    status: 404
+  - url: https://xocean.com/wp-json/
+    status: 200
+  checked: '2026-09-04'
